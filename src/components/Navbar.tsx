@@ -68,8 +68,8 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-5 left-0 right-0 z-50 flex justify-center px-4">
-      {/* Desktop Floating Pill Navbar */}
-      <nav className="glass-pill rounded-full px-3 py-2 flex items-center gap-1 shadow-2xl shadow-black/80 max-w-fit">
+      {/* Desktop Floating Pill Navbar / Mobile Header Pill */}
+      <nav className="bg-[#141414] sm:glass-pill border border-white/10 sm:border-none rounded-full px-3 py-2 flex items-center gap-1 shadow-2xl shadow-black/80 max-w-fit">
         <Link
           href="/"
           className="px-3.5 py-1.5 text-xs font-semibold tracking-wider text-white uppercase transition-colors hover:text-neutral-300"
@@ -142,7 +142,7 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer (100% Solid & Non-transparent) */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -150,7 +150,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="sm:hidden absolute top-16 left-4 right-4 glass-pill rounded-2xl p-4 shadow-2xl flex flex-col gap-2"
+            className="sm:hidden absolute top-16 left-4 right-4 bg-[#141414] border border-white/10 rounded-2xl p-4 shadow-2xl flex flex-col gap-2 z-50"
           >
             {navLinks.map((link) => {
               const isActive =
